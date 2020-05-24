@@ -1,10 +1,10 @@
 {
-  "name": "react-mat-button",
+  "name": "@vvpas/react-mat-button",
   "version": "1.0.4",
   "description": "React Material Button",
   "author": "vvpas",
   "license": "MIT",
-  "repository": "vvpas/react-mat-button",
+  "repository": "git://github.com/vvpas/react-mat-button",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.tsx",
