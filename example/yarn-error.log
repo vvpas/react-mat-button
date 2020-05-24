@@ -1,0 +1,52 @@
+Arguments: 
+  /usr/local/Cellar/node/13.12.0/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Users/victor.vincent/.npm/_npx/14703/bin:/Users/victor.vincent/node_modules/.bin:/Users/victor.vincent/.rvm/gems/ruby-2.6.3/bin:/Users/victor.vincent/.rvm/gems/ruby-2.6.3@global/bin:/Users/victor.vincent/.rvm/rubies/ruby-2.6.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/victor.vincent/maven/bin:/usr/local/go/bin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/victor.vincent/.rvm/bin
+
+Yarn version: 
+  1.22.0
+
+Node version: 
+  13.12.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, lstat '/Users/victor.vincent/Workspace/mylab/react-mat-button/node_modules/react-scripts/node_modules/@babel/plugin-syntax-object-rest-spread'
+
+npm manifest: 
+  {
+    "name": "react-mat-button-example",
+    "homepage": "https://vvpas.github.io/react-mat-button",
+    "version": "0.0.0",
+    "private": true,
+    "dependencies": {
+      "react": "link:../node_modules/react",
+      "react-dom": "link:../node_modules/react-dom",
+      "react-scripts": "link:../node_modules/react-scripts",
+      "react-mat-button": "link:.."
+    },
+    "scripts": {
+      "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
+      "build": "node ../node_modules/react-scripts/bin/react-scripts.js build",
+      "test": "node ../node_modules/react-scripts/bin/react-scripts.js test",
+      "eject": "node ../node_modules/react-scripts/bin/react-scripts.js eject"
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": [
+      ">0.2%",
+      "not dead",
+      "not ie <= 11",
+      "not op_mini all"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
