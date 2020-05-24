@@ -1,6 +1,6 @@
 {
   "name": "react-mat-button",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React Material Button",
   "author": "vvpas",
   "license": "MIT",
@@ -58,7 +58,7 @@
     "@types/styled-components": "^5.1.0",
     "styled-components": "^5.1.0"
   },
-  "publishConfig": { 
-    "registry": "https://npm.pkg.github.com/" 
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
