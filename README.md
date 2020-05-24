@@ -13,15 +13,14 @@ npm install --save react-mat-button
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react'
 
 import MyComponent from 'react-mat-button'
-import 'react-mat-button/dist/index.css'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+const MyAwesomeComponent = ({ ...props }) => {
+  return (
+    <Button>My Awesome Button</Button>
+  )
 }
 ```
 

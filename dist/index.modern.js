@@ -1,7 +1,31 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const MatColors = new Map([['amber', {
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _taggedTemplateLiteralLoose(strings, raw) {
+  if (!raw) {
+    raw = strings.slice(0);
+  }
+
+  strings.raw = raw;
+  return strings;
+}
+
+var MatColors = new Map([['amber', {
   50: '#fff8e1',
   100: '#ffecb3',
   200: '#ffe082',
@@ -330,14 +354,22 @@ var MatColorVariants;
   MatColorVariants["TEAL"] = "teal";
 })(MatColorVariants || (MatColorVariants = {}));
 
-const getMatColor = (variant, shade = MatColorShades.S500) => {
+var getMatColor = function getMatColor(variant, shade) {
   var _MatColors$get;
+
+  if (shade === void 0) {
+    shade = MatColorShades.S500;
+  }
 
   return (_MatColors$get = MatColors.get(variant)) === null || _MatColors$get === void 0 ? void 0 : _MatColors$get[shade];
 };
-const matColorKeys = Array.from(MatColors.keys());
+var matColorKeys = Array.from(MatColors.keys());
 
-const getColorByVariant = (variant, shade = MatColorShades.S500) => {
+var getColorByVariant = function getColorByVariant(variant, shade) {
+  if (shade === void 0) {
+    shade = MatColorShades.S500;
+  }
+
   console.log(';variant ', variant);
 
   switch (variant) {
@@ -364,193 +396,104 @@ const getColorByVariant = (variant, shade = MatColorShades.S500) => {
   }
 };
 
-let _ = t => t,
-    _t,
-    _t2,
-    _t3,
-    _t4;
-const StyledButton = styled.button(_t || (_t = _`
-  border: none;
-  box-shadow: none;
-  padding: unset;
-  color: #fff;
-  transition: all .5s ease;
-  cursor: pointer;
+function _templateObject4() {
+  var data = _taggedTemplateLiteralLoose(["\n      opacity: 0.5;\n      cursor: progress;\n      ", "\n      ", "\n    "]);
 
-  &:focus {
-    outline: none;
-  }
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
 
-  @keyframes anim-rotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
+  return data;
+}
 
-  > .vv-btn-loading {
-    display: inline-block;
-    color: currentcolor;
-    width: 1em;
-    height: 1em;
-    vertical-align: bottom;
-    margin-right: 6px;
-    border-width: 2px;
-    border-color: currentcolor currentcolor transparent transparent;
-    border-style: solid;
-    border-radius: 9999px;
-    animation: 0.65s linear 0s infinite normal none running anim-rotate;
-  }
+function _templateObject3() {
+  var data = _taggedTemplateLiteralLoose(["\n      color: rgba(0, 0, 0, 0.26);\n      ", "\n      ", "\n    "]);
 
-  ${0}
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
 
-  ${0}
+  return data;
+}
 
-  ${0}
+function _templateObject2() {
+  var data = _taggedTemplateLiteralLoose(["\n      ", "\n\n    ", "\n\n    ", "\n\n    ", "\n\n    ", "\n\n    ", "\n  "]);
 
-  ${0}
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
 
-  ${0}
+  return data;
+}
 
-  ${0}
-  
-  ${0}
+function _templateObject() {
+  var data = _taggedTemplateLiteralLoose(["\n  border: none;\n  box-shadow: none;\n  padding: unset;\n  color: #fff;\n  transition: all .5s ease;\n  cursor: pointer;\n\n  &:focus {\n    outline: none;\n  }\n\n  @keyframes anim-rotate {\n    0% {\n      transform: rotate(0deg);\n    }\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n\n  > .vv-btn-loading {\n    display: inline-block;\n    color: currentcolor;\n    width: 1em;\n    height: 1em;\n    vertical-align: bottom;\n    margin-right: 6px;\n    border-width: 2px;\n    border-color: currentcolor currentcolor transparent transparent;\n    border-style: solid;\n    border-radius: 9999px;\n    animation: 0.65s linear 0s infinite normal none running anim-rotate;\n  }\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n  \n  ", "\n\n  ", "\n\n  ", "\n\n  ", "\n"]);
 
-  ${0}
+  _templateObject = function _templateObject() {
+    return data;
+  };
 
-  ${0}
+  return data;
+}
+var StyledButton = styled.button(_templateObject(), function (_ref) {
+  var variant = _ref.variant;
+  return variant !== 'link' && "\n    border-radius: 3px;\n  ";
+}, function (_ref2) {
+  var disabled = _ref2.disabled,
+      variant = _ref2.variant,
+      colorVariant = _ref2.colorVariant;
+  return disabled !== true && variant !== 'link' && css(_templateObject2(), (variant === 'outline' || variant === 'solid') && "\n          border: 1px solid " + getColorByVariant(colorVariant, MatColorShades.S200) + ";\n        ", (variant === 'outline' || variant === 'text') && "\n        color: " + getColorByVariant(colorVariant, MatColorShades.S500) + ";\n        &:hover {\n          background: " + getColorByVariant(colorVariant, MatColorShades.S50) + ";\n        }\n      ", variant === 'outline' && "\n        &:hover {\n          border: 1px solid " + getColorByVariant(colorVariant, MatColorShades.S500) + ";\n        }\n      ", variant === 'solid' && colorVariant !== 'default' && "\n        background: " + getColorByVariant(colorVariant, MatColorShades.S500) + ";\n        &:hover {\n          background: " + getColorByVariant(colorVariant, MatColorShades.S700) + ";\n        }\n      ", variant === 'solid' && colorVariant === 'default' && "\n        background: " + getColorByVariant(colorVariant, MatColorShades.S200) + ";\n        &:hover {\n          background: " + getColorByVariant(colorVariant, MatColorShades.S400) + ";\n        }\n      ", colorVariant === 'default' && "\n        color: #212121;\n      ");
+}, function (_ref3) {
+  var disabled = _ref3.disabled,
+      variant = _ref3.variant;
+  return disabled !== true && variant === 'link' && "\n    color: " + getMatColor(MatColorVariants.BLUE, MatColorShades.S700) + ";\n    &:hover {\n      text-decoration: underline;\n    }\n  ";
+}, function (_ref4) {
+  var disabled = _ref4.disabled,
+      variant = _ref4.variant;
+  return disabled === true && css(_templateObject3(), (variant === 'solid' || variant === 'outline') && "\n        border: 1px solid rgba(0, 0, 0, 0.15);\n      ", variant === 'solid' && "\n        background: rgba(0, 0, 0, 0.12);\n      ");
+}, function (_ref5) {
+  var size = _ref5.size;
+  return size === 'xs' && "\n    padding: 3px 8px;\n    font-size: 0.625rem;\n    font-weight: 500;\n  ";
+}, function (_ref6) {
+  var size = _ref6.size;
+  return size === 'sm' && "\n    padding: 4px 12px;\n    font-size: 0.75rem;\n    font-weight: 500;\n  ";
+}, function (_ref7) {
+  var size = _ref7.size;
+  return size === 'md' && "\n    padding: 8px 16px;\n    font-size: 0.8125rem;\n    font-weight: 500;\n  ";
+}, function (_ref8) {
+  var size = _ref8.size;
+  return size === 'lg' && "\n    padding: 16px 24px;\n    font-size: 0.9375rem;\n    font-weight: 800;\n    text-transform: uppercase;\n  ";
+}, function (_ref9) {
+  var disabled = _ref9.disabled;
+  return disabled === true && "\n    cursor: not-allowed;\n  ";
+}, function (_ref10) {
+  var loading = _ref10.loading,
+      size = _ref10.size;
+  return loading === true && css(_templateObject4(), size === 'xs' && "\n        & > .vv-btn-loading {\n          width: 0.6em;\n          height: 0.6em;\n        }\n      ", size === 'sm' && "\n        & > .vv-btn-loading {\n          width: 0.8em;\n          height: 0.8em;\n        }\n      ");
+});
 
-  ${0}
-`), ({
-  variant
-}) => variant !== 'link' && `
-    border-radius: 3px;
-  `, ({
-  disabled,
-  variant,
-  colorVariant
-}) => disabled !== true && variant !== 'link' && css(_t2 || (_t2 = _`
-      ${0}
+var Button = function Button(_ref) {
+  var children = _ref.children,
+      _ref$variant = _ref.variant,
+      variant = _ref$variant === void 0 ? 'solid' : _ref$variant,
+      _ref$colorVariant = _ref.colorVariant,
+      colorVariant = _ref$colorVariant === void 0 ? 'default' : _ref$colorVariant,
+      _ref$size = _ref.size,
+      size = _ref$size === void 0 ? 'md' : _ref$size,
+      _ref$disabled = _ref.disabled,
+      disabled = _ref$disabled === void 0 ? false : _ref$disabled,
+      _ref$loading = _ref.loading,
+      loading = _ref$loading === void 0 ? false : _ref$loading,
+      props = _objectWithoutPropertiesLoose(_ref, ["children", "variant", "colorVariant", "size", "disabled", "loading"]);
 
-    ${0}
-
-    ${0}
-
-    ${0}
-
-    ${0}
-
-    ${0}
-  `), (variant === 'outline' || variant === 'solid') && `
-          border: 1px solid ${getColorByVariant(colorVariant, MatColorShades.S200)};
-        `, (variant === 'outline' || variant === 'text') && `
-        color: ${getColorByVariant(colorVariant, MatColorShades.S500)};
-        &:hover {
-          background: ${getColorByVariant(colorVariant, MatColorShades.S50)};
-        }
-      `, variant === 'outline' && `
-        &:hover {
-          border: 1px solid ${getColorByVariant(colorVariant, MatColorShades.S500)};
-        }
-      `, variant === 'solid' && colorVariant !== 'default' && `
-        background: ${getColorByVariant(colorVariant, MatColorShades.S500)};
-        &:hover {
-          background: ${getColorByVariant(colorVariant, MatColorShades.S700)};
-        }
-      `, variant === 'solid' && colorVariant === 'default' && `
-        background: ${getColorByVariant(colorVariant, MatColorShades.S200)};
-        &:hover {
-          background: ${getColorByVariant(colorVariant, MatColorShades.S400)};
-        }
-      `, colorVariant === 'default' && `
-        color: #212121;
-      `), ({
-  disabled,
-  variant
-}) => disabled !== true && variant === 'link' && `
-    color: ${getMatColor(MatColorVariants.BLUE, MatColorShades.S700)};
-    &:hover {
-      text-decoration: underline;
-    }
-  `, ({
-  disabled,
-  variant
-}) => disabled === true && css(_t3 || (_t3 = _`
-      color: rgba(0, 0, 0, 0.26);
-      ${0}
-      ${0}
-    `), (variant === 'solid' || variant === 'outline') && `
-        border: 1px solid rgba(0, 0, 0, 0.15);
-      `, variant === 'solid' && `
-        background: rgba(0, 0, 0, 0.12);
-      `), ({
-  size
-}) => size === 'xs' && `
-    padding: 3px 8px;
-    font-size: 0.625rem;
-    font-weight: 500;
-  `, ({
-  size
-}) => size === 'sm' && `
-    padding: 4px 12px;
-    font-size: 0.75rem;
-    font-weight: 500;
-  `, ({
-  size
-}) => size === 'md' && `
-    padding: 8px 16px;
-    font-size: 0.8125rem;
-    font-weight: 500;
-  `, ({
-  size
-}) => size === 'lg' && `
-    padding: 16px 24px;
-    font-size: 0.9375rem;
-    font-weight: 800;
-    text-transform: uppercase;
-  `, ({
-  disabled
-}) => disabled === true && `
-    cursor: not-allowed;
-  `, ({
-  loading,
-  size
-}) => loading === true && css(_t4 || (_t4 = _`
-      opacity: 0.5;
-      cursor: progress;
-      ${0}
-      ${0}
-    `), size === 'xs' && `
-        & > .vv-btn-loading {
-          width: 0.6em;
-          height: 0.6em;
-        }
-      `, size === 'sm' && `
-        & > .vv-btn-loading {
-          width: 0.8em;
-          height: 0.8em;
-        }
-      `));
-
-const Button = ({
-  children,
-  variant: _variant = 'solid',
-  colorVariant: _colorVariant = 'default',
-  size: _size = 'md',
-  disabled: _disabled = false,
-  loading: _loading = false,
-  ...props
-}) => {
   return React.createElement(StyledButton, Object.assign({
-    className: `vv-btn vv-btn-${_variant} vv-btn-color-${_colorVariant}`,
-    size: _size,
-    disabled: _disabled,
-    loading: _loading,
-    variant: _variant,
-    colorVariant: _colorVariant
-  }, props), React.createElement(React.Fragment, null, _loading && React.createElement("div", {
+    className: "vv-btn vv-btn-" + variant + " vv-btn-color-" + colorVariant,
+    size: size,
+    disabled: disabled,
+    loading: loading,
+    variant: variant,
+    colorVariant: colorVariant
+  }, props), React.createElement(React.Fragment, null, loading && React.createElement("div", {
     className: 'vv-btn-loading'
   }), children));
 };
