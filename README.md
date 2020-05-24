@@ -15,7 +15,7 @@ npm install --save react-mat-button
 ```tsx
 import React from 'react'
 
-import MyComponent from 'react-mat-button'
+import Button from 'react-mat-button'
 
 const MyAwesomeComponent = ({ ...props }) => {
   return (
